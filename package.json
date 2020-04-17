@@ -1,7 +1,7 @@
 {
-  "name": "diasalexandre-react-boilerplate",
+  "name": "beer-store",
   "version": "0.1.0",
-  "description": "Ma react boilerplate",
+  "description": "Beer store",
   "author": "Alexandre Dias <alexandrermd@gmail.com>",
   "private": true,
   "scripts": {
@@ -50,7 +50,8 @@
     "react-hot-loader": "^4.12.20",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
-    "redux": "^4.0.2"
+    "redux": "^4.0.2",
+    "styled-components": "^5.1.0"
   },
   "pre-commit": [
     "lint",
