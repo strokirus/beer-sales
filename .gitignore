@@ -1,2 +1,33 @@
+# all
 node_modules/
-public/
+
+# fes
+fe/node_modules
+fe/.pnp
+.pnp.js
+
+# testing
+fe/coverage
+
+# production
+fe/public
+
+# misc
+fe/.DS_Store
+fe/src/components/.DS_Store
+fe/.env.local
+fe/.env.development.local
+fe/.env.test.local
+fe/.env.production.local
+
+fe/npm-debug.log*
+fe/yarn-debug.log*
+fe/yarn-error.log
+
+# server
+server/npm-debug.log*
+server/yarn-debug.log*
+server/yarn-error.log*
+server/node_modules
+
+

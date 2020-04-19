@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import {
   fetchProducts,
+  setText,
+  setTextEnter,
 } from './actions';
 
 /**
@@ -22,12 +24,37 @@ class Search extends Component {
     fetchProductsProps();
   }
 
+  onChangeText = (e) => {
+    const {
+      setText,
+    } = this.props;
+
+    setText(e.target.value);
+  }
+
+  onKeyChange = (e) => {
+    const {
+      keyCode,
+    } = e;
+
+    const {
+      setTextEnter,
+    } = this.props;
+
+    if (keyCode === 13) {
+      setTextEnter();
+    }
+  }  
+
   render() {
-    const { search } = this.props;
+    const {
+      search
+    } = this.props;
 
     const {
       items,
       status,
+      text,
     } = search;
 
     if (status.isLoading && items.length === 0) {
@@ -49,6 +76,22 @@ class Search extends Component {
 
     return (
       <>
+        <input
+          type="text"
+          value={text}
+          onChange={e => this.onChangeText(e)}
+          onKeyUp={e => this.onKeyChange(e)}
+          style={{
+            width: '80%',
+            padding: '8px 5px',
+            boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, 0.3)',
+            fontSize: '16px',
+            border: '1px solid rgba(0, 0, 0, 0.3)'
+          }}
+        />
+        {text.length > 0 &&
+          <h3>Search by {text}</h3>
+        }
         <article
           style={{
             width: '75%',
@@ -132,15 +175,22 @@ class Search extends Component {
 
 Search.propTypes = {
   fetchProducts: func.isRequired,
+  setText: func,
+  setTextEnter: func,
   search: object,
 };
 
 Search.defaultProps = {
   search: { },
+  setText: () => {},
+  setTextEnter: () => {},
 };
 
 function mapStateToProps(state, ownProps) {
-  const { search } = state;
+  const {
+    search,
+  } = state;
+
   return {
     ...ownProps,
     search,
@@ -149,6 +199,8 @@ function mapStateToProps(state, ownProps) {
 
 const mapDispatchToProps = {
   fetchProducts,
+  setText,
+  setTextEnter,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

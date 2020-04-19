@@ -44,7 +44,8 @@ app.get('/products/:page?/:name?/:limit?', async (req, res, next) => {
     let response = base;
 
     if (nameParam) {
-      response = response.filter(e => e.name.indexOf(nameParam) >= 0);
+      response = response.filter(e =>
+        e.name.toLowerCase().indexOf(nameParam.toLowerCase()) >= 0);
     }
 
     if (limitParams) {

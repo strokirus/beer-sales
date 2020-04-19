@@ -40,6 +40,12 @@ const searchReducer = (state, action) => {
         },
       };
 
+    case C.SET_TEXT:
+      return {
+        ...state,
+        text: action.params,
+      };      
+
     default:
       return state || initialState;
   }

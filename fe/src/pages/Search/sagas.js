@@ -25,8 +25,6 @@ function* fetchProducts(data) {
   try {
     const response = yield call(requestCall, data.params);
 
-    console.log(response);
-
     const { items } = yield select((state) => state.search);
 
     if (response) {
@@ -57,8 +55,25 @@ function* fetchProducts(data) {
   }
 }
 
+function* setText() {
+  try {
+    const { text } = yield select((state) => state.search);
+
+    yield put({
+      type: C.FETCH_PRODUCTS_REQUEST,
+      params: { name: text },
+    });
+  } catch (error) {
+    yield put({
+      type: C.FETCH_PRODUCTS_FAILURE,
+      error,
+    });
+  }
+}
+
 function* getSearchData() {
   yield takeLatest(C.FETCH_PRODUCTS_REQUEST, fetchProducts);
+  yield takeLatest(C.SET_TEXT_CONFIRM, setText);
 }
 
 export default getSearchData;

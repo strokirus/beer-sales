@@ -21,9 +21,9 @@ export const requestBuilder = (endpoint = 'any', params) => {
 
       Object.keys(params).forEach((key, i) => {
         if (i === 0) {
-          server = server.concat(`?${key}=${JSON.stringify(params[key])}`);
+          server = server.concat(`?${key}=${params[key]}`);
         } else {
-          server = server.concat(`&${key}=${JSON.stringify(params[key])}`);
+          server = server.concat(`&${key}=${params[key]}`);
         }
       });
 
