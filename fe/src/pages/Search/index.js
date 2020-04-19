@@ -78,6 +78,7 @@ class Search extends Component {
       <>
         <input
           type="text"
+          id="search-box"
           value={text}
           onChange={e => this.onChangeText(e)}
           onKeyUp={e => this.onKeyChange(e)}
@@ -93,6 +94,7 @@ class Search extends Component {
           <h3>Search by {text}</h3>
         }
         <article
+          id="content-products"
           style={{
             width: '75%',
             display: 'grid',
@@ -104,6 +106,7 @@ class Search extends Component {
         >
           {items.map(e => (
             <section
+              className="item-product"
               key={e.id}
               style={{
                 boxShadow: 'rgba(0,0,0,0.15) 0px 2px 4px 0px',
