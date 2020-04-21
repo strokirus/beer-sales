@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const sleep = require('sleep-promise');
 const {
   base,
 } = require('./settings');
@@ -53,6 +54,8 @@ app.get('/products/:page?/:name?/:limit?', async (req, res, next) => {
 
       response = response.slice(pageIntern, pageIntern + limitParams);
     }
+
+    //await sleep(2000);
 
     res
       .status(200)
