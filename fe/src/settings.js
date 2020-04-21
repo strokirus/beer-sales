@@ -5,6 +5,7 @@ export const API_SERVER = '//localhost:6060';
 */
 export const routePaths = {
   home: '/',
+  checkout: '/checkout',
 };
 
 /**

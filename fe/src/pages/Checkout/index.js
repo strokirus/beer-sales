@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { string } from 'prop-types';
 import { connect } from 'react-redux';
 
 import {
@@ -8,17 +7,13 @@ import {
 } from '../../cssGlobals/globals';
 
 import Search from '../../containers/Search/';
-import Products from '../../containers/Products/';
 import Cart from '../../containers/Cart/';
 
 /**
- * Search Container
+ * CheckoutPage Container
 */
-class SearchPage extends Component {
+class CheckoutPage extends Component {
   render() {
-    const { term } = this.props;
-    console.log(term);
-
     return (
       <>
         <MainHeader>
@@ -26,7 +21,6 @@ class SearchPage extends Component {
           <Search />
         </MainHeader>
         <SectionWrapper>
-          <Products />
           <Cart />
         </SectionWrapper>
       </>
@@ -34,12 +28,10 @@ class SearchPage extends Component {
   }
 }
 
-SearchPage.propTypes = {
-  term: string,
+CheckoutPage.propTypes = {
 };
 
-SearchPage.defaultProps = {
-  term: '',
+CheckoutPage.defaultProps = {
 };
 
 function mapStateToProps(state, ownProps) {
@@ -51,4 +43,4 @@ function mapStateToProps(state, ownProps) {
 const mapDispatchToProps = {
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);
+export default connect(mapStateToProps, mapDispatchToProps)(CheckoutPage);

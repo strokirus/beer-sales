@@ -9,14 +9,8 @@ import routes from './routes';
 
 import {
   GlobalStyle,
-  MainHeader,
   MainFooter,
 } from './cssGlobals/globals';
-
-const Section = styled.section`
-  position: relative;
-  padding-bottom: 150px;
-`;
 
 class App extends React.Component {
   constructor(props) {
@@ -40,7 +34,7 @@ class App extends React.Component {
    * Trigged when key is t
   */
   keyToggleTheme = (e) => {
-    if (e.keyCode === 84) {
+    if (e.altKey && e.keyCode === 84) {
       this.toggleTheme();
     }
   }
@@ -74,12 +68,7 @@ class App extends React.Component {
           }}
         >
           <GlobalStyle />
-          <MainHeader>
-            <h1>Beer Store</h1>
-          </MainHeader>
-          <Section>
-            {routes}
-          </Section>
+          {routes}
           <MainFooter>
             <p
               className="about"

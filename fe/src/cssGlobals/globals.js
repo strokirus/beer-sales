@@ -35,6 +35,11 @@ export const GlobalStyle = createGlobalStyle`
       ${({ theme }) => (theme.mode === 'dark' ? `${colors.white}` : 'inherit')};
   }
 
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+  }  
+
   button {
     cursor: pointer;
     padding: 5px 10px;
@@ -56,10 +61,14 @@ export const GlobalStyle = createGlobalStyle`
 
 export const MainHeader = styled.header`
   padding: 0 25px;
+  width: 100%;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px 0px;
   margin-bottom: 10px;
   line-height: 60px;
   height: 60px;
+  display: grid;
+  grid-template-columns: 20% 75%;
+  grid-template-rows: auto auto;
   background-color:
     ${({ theme }) => (theme.mode === 'dark' ? `${colors.dark}` : `${colors.white}`)};
   
@@ -95,8 +104,18 @@ export const MainFooter = styled.footer`
   }
 `;
 
+export const SectionWrapper = styled.section`
+  position: relative;
+  padding-bottom: 150px;
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
 export default {
   GlobalStyle,
   MainHeader,
+  SectionWrapper,
   MainFooter,
 };

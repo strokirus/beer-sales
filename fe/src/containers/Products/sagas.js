@@ -10,17 +10,23 @@ import {
 } from './api';
 
 import C from './constants';
-import { formatCash } from '../../utils';
+
+import {
+  formatCash,
+} from '../../utils';
 
 /**
  * Trigged when Request is demmanded
 */
 function* fetchProducts(data) {
   let append = false;
+  let term;
 
   if (data.params) {
     append = data.params.append;
   }
+
+  term = data.params?.name;
 
   try {
     const response = yield call(requestCall, data.params);
@@ -43,6 +49,7 @@ function* fetchProducts(data) {
       yield put({
         type: C.FETCH_PRODUCTS_SUCCESS,
         data: itemsUpdate,
+        term,
       });
     } else {
       throw response;
@@ -55,25 +62,8 @@ function* fetchProducts(data) {
   }
 }
 
-function* setText() {
-  try {
-    const { text } = yield select((state) => state.search);
-
-    yield put({
-      type: C.FETCH_PRODUCTS_REQUEST,
-      params: { name: text },
-    });
-  } catch (error) {
-    yield put({
-      type: C.FETCH_PRODUCTS_FAILURE,
-      error,
-    });
-  }
-}
-
-function* getSearchData() {
+function* getProductsData() {
   yield takeLatest(C.FETCH_PRODUCTS_REQUEST, fetchProducts);
-  yield takeLatest(C.SET_TEXT_CONFIRM, setText);
 }
 
-export default getSearchData;
+export default getProductsData;

@@ -1,8 +1,12 @@
 import { all, fork } from 'redux-saga/effects';
-import searchSaga from './pages/Search/sagas';
+import searchSaga from './containers/Search/sagas';
+import cartSaga from './containers/Cart/sagas';
+import productsSaga from './containers/Products/sagas';
 
 const sagas = [
   searchSaga,
+  cartSaga,
+  productsSaga,
 ];
 
 /**

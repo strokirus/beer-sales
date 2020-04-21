@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-import search from './pages/Search/reducers';
+import search from './containers/Search/reducers';
+import products from './containers/Products/reducers';
+import cart from './containers/Cart/reducers';
 
 const mainReducer = combineReducers({
   search,
+  products,
+  cart,
 });
 
 /**

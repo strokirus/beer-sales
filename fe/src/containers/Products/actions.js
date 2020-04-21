@@ -8,17 +8,6 @@ export const fetchProducts = params => ({
   params,
 });
 
-export const setText = params => ({
-  type: C.SET_TEXT,
-  params,
-});
-
-export const setTextEnter = () => ({
-  type: C.SET_TEXT_CONFIRM,
-});
-
 export default {
   fetchProducts,
-  setText,
-  setTextEnter,
 }
