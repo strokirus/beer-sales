@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { func, object } from 'prop-types';
+import {
+  func,
+  object,
+  string,
+} from 'prop-types';
 import { connect } from 'react-redux';
 
 import {
@@ -7,10 +11,23 @@ import {
   setTextEnter,
 } from './actions';
 
+import InputSearch from '../../components/InputSearch';
+
 /**
  * Search Container
 */
 class Search extends Component {
+  componentDidMount = () => {
+    const {
+      term,
+      setText,
+    } = this.props;
+
+    if (term && term.length > 0) {
+      setText(term);
+    }
+  }
+
   onChangeText = (e) => {
     const {
       setText,
@@ -43,22 +60,10 @@ class Search extends Component {
     } = search;
 
     return (
-      <input
-        type="text"
-        id="search-box"
-        value={text}
-        onChange={e => this.onChangeText(e)}
-        onKeyUp={e => this.onKeyChange(e)}
-        style={{
-          width: '80%',
-          outline: 'none',
-          height: '15px',
-          marginTop: '13px',
-          padding: '8px 5px',
-          boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, 0.3)',
-          fontSize: '16px',
-          border: '1px solid rgba(0, 0, 0, 0.3)'
-        }}
+      <InputSearch
+        text={text}
+        onChangeText={this.onChangeText}
+        onKeyChange={this.onKeyChange}
       />
     );
   }
@@ -68,12 +73,14 @@ Search.propTypes = {
   setText: func,
   setTextEnter: func,
   search: object,
+  term: string,
 };
 
 Search.defaultProps = {
   search: { },
   setText: () => {},
   setTextEnter: () => {},
+  term: '',
 };
 
 function mapStateToProps(state, ownProps) {

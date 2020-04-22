@@ -40,6 +40,52 @@ export const GlobalStyle = createGlobalStyle`
     flex-wrap: wrap;
   }  
 
+  .total-cart {
+    text-align: right;
+    font-size: 14px;
+    padding: 10px 10px;
+    color: #ec6f13;
+  }
+
+  .checkout-button {
+    margin-top: 10px;
+    width: 90%;
+    margin: 10px auto 0 auto;
+    background-color: #ec6f13;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    color: #FFF;
+    padding: 10px;
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  #checkout #cart-products {
+    width: 100%;
+
+    .total-cart {
+      padding: 10px 5px;
+      font-size: 26px;
+    }
+
+    .item-cart-product {
+      display: grid;
+      padding-bottom: 0 !important;
+      grid-template-columns: 33% 33% 33%;
+      grid-template-rows: auto auto auto;
+      > p, > section {
+        padding: 30px 0 0 0;
+      }
+      > header {
+        border-bottom: none;
+        padding: 10px 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
   button {
     cursor: pointer;
     padding: 5px 10px;
@@ -74,8 +120,19 @@ export const MainHeader = styled.header`
   
   > h1 {
     font-size: 20px;
+    font-weight: 500;
   }
 `;
+
+export const ContentProducts = styled.article`
+  width: 73%;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto auto auto auto;
+  padding: 15px 10px;
+  font-size: 10px;
+`;
+
 
 export const MainFooter = styled.footer`
   position: absolute;
@@ -111,6 +168,17 @@ export const SectionWrapper = styled.section`
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+
+  .checkout {
+    border: 1px solid red;
+  }
+`;
+
+export const CartProduct = styled.article`
+  width: 20%;
+  grid-template-rows: auto;
+  padding: 15px 10px;
+  font-size: 10px;
 `;
 
 export default {
@@ -118,4 +186,6 @@ export default {
   MainHeader,
   SectionWrapper,
   MainFooter,
+  ContentProducts,
+  CartProduct,
 };

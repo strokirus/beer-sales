@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { string } from 'prop-types';
 import { connect } from 'react-redux';
+import {
+  Link,
+} from "react-router-dom";
 
 import {
   MainHeader,
@@ -15,19 +18,33 @@ import Cart from '../../containers/Cart/';
  * Search Container
 */
 class SearchPage extends Component {
+  /**
+   * Trigged by change text search and check with value is valid by cep mask
+   * @param event Event passed by user changes values
+  */
   render() {
     const { term } = this.props;
-    console.log(term);
 
     return (
       <>
         <MainHeader>
           <h1>Beer Store</h1>
-          <Search />
+          <Search
+            term={term}
+          />
         </MainHeader>
         <SectionWrapper>
-          <Products />
-          <Cart />
+          <Products
+            term={term}
+          />
+          <Cart>
+            <Link
+              to="/checkout"
+              className="checkout-button"
+            >
+              Checkout
+            </Link>
+          </Cart>
         </SectionWrapper>
       </>
     );
@@ -35,7 +52,7 @@ class SearchPage extends Component {
 }
 
 SearchPage.propTypes = {
-  term: string,
+  term: string.isRequired,
 };
 
 SearchPage.defaultProps = {

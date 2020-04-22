@@ -20,7 +20,9 @@ class CheckoutPage extends Component {
           <h1>Beer Store</h1>
           <Search />
         </MainHeader>
-        <SectionWrapper>
+        <SectionWrapper
+          id="checkout"
+        >
           <Cart />
         </SectionWrapper>
       </>

@@ -24,7 +24,7 @@ function* setText() {
       params: { name: text },
     });
 
-    history.replace(`?term=${text}`);
+    history.replace(`/${text}`);
   } catch (error) {
     console.error(error);
     yield put({

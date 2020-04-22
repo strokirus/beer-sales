@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { func, object } from 'prop-types';
+import {
+  func,
+  object,
+  string,
+} from 'prop-types';
 import { connect } from 'react-redux';
 
 import {
@@ -9,6 +13,11 @@ import {
 import {
   addToCart,
 } from '../../containers/Cart/actions';
+
+import Product from '../../components/Product';
+import Loading from '../../components/Loading';
+import ErrorPage from '../../components/ErrorPage';
+import { ContentProducts } from '../../cssGlobals/globals';
 
 /**
  * Products Container
@@ -21,9 +30,16 @@ class Products extends Component {
   componentDidMount = () => {
     const {
       fetchProducts: fetchProductsProps,
+      term,
     } = this.props;
 
-    fetchProductsProps();
+    if (term && term.length > 3) {
+      fetchProductsProps({
+        name: term,
+      });
+    } else {
+      fetchProductsProps();
+    }
   }
 
   handleAddCart = e => {
@@ -47,56 +63,19 @@ class Products extends Component {
 
     if (status.isLoading) {
       return (
-        <article
-          id="content-products"
-          style={{
-            width: '73%',
-            display: 'grid',
-            gridTemplateColumns: '25% 25% 25% 25%',
-            gridTemplateRows: 'auto auto auto auto',
-            padding: '15px 10px',
-            fontSize: '10px'
-          }}
-        >
-          <h1>Loading...</h1>
-        </article>
+        <Loading />
       );
     }
 
     if (status.isError) {
       return (
-        <article
-          id="content-products"
-          style={{
-            width: '73%',
-            display: 'grid',
-            gridTemplateColumns: '25% 25% 25% 25%',
-            gridTemplateRows: 'auto auto auto auto',
-            padding: '15px 10px',
-            fontSize: '10px'
-          }}
-        >
-          <h1>Something is rotten in the state of Denmark</h1>
-          <p>Try contact the administrators of site</p>
-        </article>
+        <ErrorPage />
       );
     }
 
     if (items.length === 0) {
       return (
-        <article
-          id="content-products"
-          style={{
-            width: '73%',
-            display: 'grid',
-            gridTemplateColumns: '25% 25% 25% 25%',
-            gridTemplateRows: 'auto auto auto auto',
-            padding: '15px 10px',
-            fontSize: '10px'
-          }}
-        >
-          <p>No results</p>
-        </article>
+        <p>No results</p>
       );      
     }
 
@@ -113,86 +92,16 @@ class Products extends Component {
             `Found ${items.length} for "${term}"`
           }
         </h3>
-        <article
+        <ContentProducts
           id="content-products"
-          style={{
-            width: '73%',
-            display: 'grid',
-            gridTemplateColumns: '25% 25% 25% 25%',
-            gridTemplateRows: 'auto auto auto auto',
-            padding: '15px 10px',
-            fontSize: '10px'
-          }}
         >
           {items.map(item => (
-            <section
-              className="item-product"
-              key={items.id}
-              style={{
-                boxShadow: 'rgba(0,0,0,0.15) 0px 2px 4px 0px',
-                border: '1px solid rgba(0,0,0,0.15)',
-                borderRadius: '10px',
-                textAlign: 'center',
-                margin: '10px 5px',
-                paddingBottom: '10px',
-              }}
-              alt={item.name}
-              title={item.name}
-            >
-              {item.labels && item.labels.medium &&
-                <section
-                  style={{
-                    padding: '10px',
-                    borderRadius: '10px 10px 0 0',
-                    backgroundColor: '#FFF',
-                    borderBottom: '1px solid rgba(0,0,0,0.15)',
-                  }}
-                >
-                <img
-                  src={item.labels.medium}
-                  alt={item.name}
-                  style={{
-                    width: '85%',
-                    margin: '0 auto',
-                  }}
-                />
-                </section>
-              }            
-              <h1
-                style={{
-                  borderBottom: '1px solid rgba(0,0,0,0.15)',
-                  textAlign: 'left',
-                  textOverflow: 'ellipsis',
-                  wordBreak: 'bread-word',
-                  overflow: 'hidden',
-                  padding: '10px 15px',
-                  fontSize: '14px',
-                  fontWeight: '700',
-                  lineHeight: '16px',
-                  height: '40px',
-                  marginBottom: '10px',
-                  color: '#363636',
-                }}
-                title={item.name}
-              >
-                {item.name}
-              </h1>
-
-              <p>{`Stock: ${item.stock}`}</p>
-              <p>{`Price: ${item.formatPrice}`}</p>
-              <button
-                type="button"
-                style={{
-                  marginTop: '10px',
-                }}
-                className="buy-item"
-                onClick={e => this.handleAddCart(item, e)}
-              >
-                Buy
-              </button>
-            </section>
+            <Product
+              item={item}
+              handleAddCart={this.handleAddCart}
+            />
           ))}
-        </article>
+        </ContentProducts>
       </>
     );
   }
@@ -202,10 +111,12 @@ Products.propTypes = {
   fetchProducts: func.isRequired,
   addToCart: func,
   products: object,
+  term: string,
 };
 
 Products.defaultProps = {
   products: { },
+  term: '',
   addToCart: () => {},
 };
 
