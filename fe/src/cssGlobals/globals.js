@@ -66,11 +66,18 @@ export const GlobalStyle = createGlobalStyle`
 
   #checkout #cart-products {
     width: 100%;
+    position: relative;
 
     .total-cart {
       padding: 10px 5px;
       font-size: 26px;
     }
+
+    @media (max-width: ${breakpoints.small}) {
+      > article {
+        max-height: inherit;
+      }
+    } 
 
     .item-cart-product {
       display: grid;
@@ -140,7 +147,7 @@ export const ContentProducts = styled.article`
 
   @media (max-width: ${breakpoints.small}) {
     width: 95%;
-    margin-bottom: 250px;
+    margin-bottom: 150px;
     grid-template-columns: 50% 50%; 
   }
 `;
@@ -206,7 +213,7 @@ export const CartProduct = styled.article`
       ${({ theme }) => (theme.mode === 'dark' ? `${colors.black}` : `${colors.white}`)};
 
     > article {
-      max-height: 145px;
+      max-height: 160px;
       overflow-y: scroll;
     }
   }  

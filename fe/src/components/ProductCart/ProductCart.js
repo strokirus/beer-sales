@@ -15,6 +15,8 @@ const ProductCart = ({ item, addCart, removeCart }) => {
     id,
     name,
     qtd,
+    formatPrice,
+    total,
   } = item;
 
   return (
@@ -36,18 +38,37 @@ const ProductCart = ({ item, addCart, removeCart }) => {
         <h1>{name}</h1>
       </Header>
 
-      <p>{`Qtd: ${qtd}`}</p>
-      <section>
-      <button
+      <section style={{
+        display: 'grid',
+        gridTemplateColumns: '50% 50%',
+        marginBottom: '10px',
+      }}>
+        <p>{`Qtd: ${qtd}`}</p>
+        <p>{`${formatPrice}/un`}</p>
+      </section>
+      <section style={{
+        display: 'grid',
+        gridTemplateColumns: '25% 25% 50%',
+        marginBottom: '10px',
+        textAlign: 'center',
+      }}>
+        <button
+          style={{
+           margin: '0 auto'
+          }}
           className="remove-qtd"
           type="button"
           onClick={a => removeCart(item, a)}
         >{`-`}</button>        
         <button
+          style={{
+            margin: '0 auto'
+          }}        
           className="add-qtd"
           type="button"
           onClick={a => addCart(item, a)}
-        >{`+`}</button>              
+        >{`+`}</button>
+        <p>{`${total}`}</p>
       </section>   
     </section> 
   );

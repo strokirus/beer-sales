@@ -28,9 +28,11 @@ function* addCart(data) {
       items.push({
         ...params,
         qtd: 1,
+        total: formatCash(params.price),
       });
     } else if (items[filtered].qtd < params.stock) {
       items[filtered].qtd += 1;
+      items[filtered].total = formatCash(items[filtered].qtd * items[filtered].price);
     } else {
       return;
     }
@@ -69,6 +71,7 @@ function* removeCart(data) {
 
     if (items[indexItem].qtd > 1) {
       items[indexItem].qtd -= 1;
+      items[indexItem].total = formatCash(items[indexItem].qtd * items[indexItem].price);
     } else {
       items.splice(indexItem, 1);
     }
