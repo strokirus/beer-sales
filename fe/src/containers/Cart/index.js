@@ -48,14 +48,20 @@ class Cart extends Component {
         <CartProduct
           id="cart-products"
         >
-          <h1>Cart</h1>
-          {items.map(item => (
-            <ProductCart
-              item={item}
-              addCart={this.handleAddCart}
-              removeCart={this.handleRemoveCart}
-            />
-          ))}
+          <h1
+            style={{
+              padding: '4px 8px',
+            }}
+          >Cart</h1>
+          <article>
+            {items.map(item => (
+              <ProductCart
+                item={item}
+                addCart={this.handleAddCart}
+                removeCart={this.handleRemoveCart}
+              />
+            ))}
+          </article>
           <p
             className="total-cart"
           >

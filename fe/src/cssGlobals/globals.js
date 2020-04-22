@@ -6,6 +6,8 @@ import {
   colors,
 } from './variables';
 
+import { breakpoints } from '../helpers/breakpoints';
+
 export const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
@@ -122,6 +124,10 @@ export const MainHeader = styled.header`
     font-size: 20px;
     font-weight: 500;
   }
+
+  @media (max-width: ${breakpoints.small}) {
+    grid-template-columns: 40% 60%;
+  }
 `;
 
 export const ContentProducts = styled.article`
@@ -131,6 +137,12 @@ export const ContentProducts = styled.article`
   grid-template-rows: auto auto auto auto;
   padding: 15px 10px;
   font-size: 10px;
+
+  @media (max-width: ${breakpoints.small}) {
+    width: 95%;
+    margin-bottom: 250px;
+    grid-template-columns: 50% 50%; 
+  }
 `;
 
 
@@ -172,6 +184,10 @@ export const SectionWrapper = styled.section`
   .checkout {
     border: 1px solid red;
   }
+
+  @media (max-width: ${breakpoints.small}) {
+    width: 100%;
+  }  
 `;
 
 export const CartProduct = styled.article`
@@ -179,6 +195,21 @@ export const CartProduct = styled.article`
   grid-template-rows: auto;
   padding: 15px 10px;
   font-size: 10px;
+
+  @media (max-width: ${breakpoints.small}) {
+    width: 98%;
+    padding: 10px 3px;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    background-color:
+      ${({ theme }) => (theme.mode === 'dark' ? `${colors.black}` : `${colors.white}`)};
+
+    > article {
+      max-height: 145px;
+      overflow-y: scroll;
+    }
+  }  
 `;
 
 export default {

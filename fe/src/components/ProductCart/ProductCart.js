@@ -24,7 +24,7 @@ const ProductCart = ({ item, addCart, removeCart }) => {
       style={{
         boxShadow: 'rgba(0,0,0,0.15) 0px 2px 4px 0px',
         border: '1px solid rgba(0,0,0,0.15)',
-        borderRadius: '10px',
+        borderRadius: '5px',
         textAlign: 'center',
         margin: '10px 5px',
         paddingBottom: '10px',

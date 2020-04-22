@@ -81,7 +81,7 @@ class Products extends Component {
 
     return (
       <>
-        <h3
+        <h2
           style={{
             width: '100%',
             height: '30px',
@@ -91,7 +91,7 @@ class Products extends Component {
           {term.length > 0 &&
             `Found ${items.length} for "${term}"`
           }
-        </h3>
+        </h2>
         <ContentProducts
           id="content-products"
         >
