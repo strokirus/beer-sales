@@ -1,14 +1,14 @@
 setup:
 	@echo "Installing root dependencies"
-	(yarn install)
+	(npm install)
 	@echo "Installing dependencies front-end"
-	(yarn install --prefix ./fe/)
+	(npm install --prefix ./fe/)
 	@echo "Installing dependencies Server"
-	(yarn install --prefix ./server/)
+	(npm install --prefix ./server/)
 
 run:
 	@echo "Creating build"
-	(yarn --cwd ./fe/ build)
+	(npm run build --prefix ./fe/)
 	@echo "Starting Server"
 	(./node_modules/.bin/pm2 start ./server)
 	@echo "Starting Front End"

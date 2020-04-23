@@ -6,9 +6,6 @@
   "license": "ISC",
   "dependencies": {
     "http-server": "^0.12.1",
-    "pm2": "^4.2.3",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "pm2": "^4.2.3"
   }
 }
