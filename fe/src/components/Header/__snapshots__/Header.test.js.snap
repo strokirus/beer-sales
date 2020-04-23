@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Component) Header should render an Header 1`] = `
+<header
+  className="sc-AxjAm fgdJHj"
+>
+  <a
+    href="/"
+    onClick={[Function]}
+  >
+    <h1>
+      Beer Store
+    </h1>
+  </a>
+  <input
+    className="sc-AxirZ cwgdyS"
+    id="search-box"
+    onChange={[Function]}
+    onKeyUp={[Function]}
+    placeholder="Search your beer here..."
+    type="text"
+    value=""
+  />
+  <label
+    className="sc-AxiKw gShybA"
+    htmlFor="search-box"
+  >
+    Search your beers MainHeader
+  </label>
+</header>
+`;

@@ -14,17 +14,16 @@ export default (
           path={routePaths.checkout}
         >
           <Checkout />
-        </Route>        
+        </Route>
         <Route
           exact
           path={`${routePaths.home}:term?`}
-          render={props => (
+          render={(props) => (
             <Search
               term={props.match.params.term}
             />
-          )}          
-        >
-        </Route>
+          )}
+        />
 
       </Switch>
     </BrowserRouter>

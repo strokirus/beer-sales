@@ -2,7 +2,7 @@ module.exports = {
   coverageDirectory: './__coverage__',
   rootDir: '.',
   roots: ['src'],
-  moduleFileExtensions: ['js'],
+  moduleFileExtensions: ['js', 'json'],
   collectCoverageFrom: [
     'src/@(components|util|styles)/**/*.{js,jsx}',
     '!src/@(components|util|styles)/**/index.{js,jsx}',

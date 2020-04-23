@@ -5,6 +5,12 @@ import {
   Header,
 } from '../Product/styles';
 
+import {
+  ItemCart,
+  SectionBody,
+  Commands,
+} from './styles';
+
 /**
  * Component to Product
  * @param item Object with product info
@@ -20,17 +26,9 @@ const ProductCart = ({ item, addCart, removeCart }) => {
   } = item;
 
   return (
-    <section
+    <ItemCart
       className="item-cart-product"
       key={id}
-      style={{
-        boxShadow: 'rgba(0,0,0,0.15) 0px 2px 4px 0px',
-        border: '1px solid rgba(0,0,0,0.15)',
-        borderRadius: '5px',
-        textAlign: 'center',
-        margin: '10px 5px',
-        paddingBottom: '10px',
-      }}
       alt={name}
       title={name}
     >
@@ -38,39 +36,28 @@ const ProductCart = ({ item, addCart, removeCart }) => {
         <h1>{name}</h1>
       </Header>
 
-      <section style={{
-        display: 'grid',
-        gridTemplateColumns: '50% 50%',
-        marginBottom: '10px',
-      }}>
+      <SectionBody>
         <p>{`Qtd: ${qtd}`}</p>
         <p>{`${formatPrice}/un`}</p>
-      </section>
-      <section style={{
-        display: 'grid',
-        gridTemplateColumns: '25% 25% 50%',
-        marginBottom: '10px',
-        textAlign: 'center',
-      }}>
+      </SectionBody>
+      <Commands>
         <button
-          style={{
-           margin: '0 auto'
-          }}
           className="remove-qtd"
           type="button"
-          onClick={a => removeCart(item, a)}
-        >{`-`}</button>        
+          onClick={(a) => removeCart(item, a)}
+        >
+          -
+        </button>
         <button
-          style={{
-            margin: '0 auto'
-          }}        
           className="add-qtd"
           type="button"
-          onClick={a => addCart(item, a)}
-        >{`+`}</button>
+          onClick={(a) => addCart(item, a)}
+        >
+          +
+        </button>
         <p>{`${total}`}</p>
-      </section>   
-    </section> 
+      </Commands>
+    </ItemCart>
   );
 };
 

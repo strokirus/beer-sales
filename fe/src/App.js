@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import styled, {
+import {
   ThemeProvider,
 } from 'styled-components';
 
@@ -9,8 +9,9 @@ import routes from './routes';
 
 import {
   GlobalStyle,
-  MainFooter,
 } from './cssGlobals/globals';
+
+import Footer from './components/Footer';
 
 class App extends React.Component {
   constructor(props) {
@@ -69,30 +70,9 @@ class App extends React.Component {
         >
           <GlobalStyle />
           {routes}
-          <MainFooter>
-            <p
-              className="about"
-            >
-              Created by
-              <a
-                href="//diasalexandre.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Alexandre Dias
-              </a>
-            </p>
-            <p
-              className="toggle"
-            >
-              <button
-                type="button"
-                onClick={this.toggleTheme}
-              >
-                Toggle theme
-              </button>
-            </p>
-          </MainFooter>
+          <Footer
+            toggleTheme={this.toggleTheme}
+          />
         </ThemeProvider>
       </Provider>
     );

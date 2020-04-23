@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import {
+  colors,
+} from '../../cssGlobals/variables';
 
 export const SectionProduct = styled.section`
     box-shadow: rgba(0,0,0,0.15) 0px 2px 4px 0px;
@@ -6,6 +9,8 @@ export const SectionProduct = styled.section`
     text-align: center;
     margin: 10px 5px;
     padding-bottom: 10px;
+    background-color:
+        ${({ theme }) => (theme.mode === 'dark' ? `${colors.dark}` : `${colors.white}`)};
 
     &:hover {
         box-shadow: 0px 0px 7px 0px rgba(50,50,50,0.2);
@@ -47,7 +52,9 @@ export const Header = styled.header`
         overflow: hidden;
         font-size: 14px;
         font-weight: 400;
-        color: #363636;
+        color:
+            ${({ theme }) => (theme.mode === 'dark' ? `${colors.white}` : `${colors.dark}`)};
+
         display: table-cell;
         vertical-align: middle;
     } 
@@ -59,6 +66,8 @@ export const Button = styled.button`
     margin: 10px auto 0 auto;
     background-color: #ec6f13;
     border: none;
+    color: ${colors.white};
+
 `;
 
 export const PriceBox = styled.p`
@@ -73,5 +82,5 @@ export default {
   BoxImage,
   Header,
   Button,
-  PriceBox
+  PriceBox,
 };

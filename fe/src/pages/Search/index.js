@@ -3,16 +3,16 @@ import { string } from 'prop-types';
 import { connect } from 'react-redux';
 import {
   Link,
-} from "react-router-dom";
+} from 'react-router-dom';
 
 import {
-  MainHeader,
   SectionWrapper,
 } from '../../cssGlobals/globals';
 
-import Search from '../../containers/Search/';
-import Products from '../../containers/Products/';
-import Cart from '../../containers/Cart/';
+import Products from '../../containers/Products';
+import Cart from '../../containers/Cart';
+
+import Header from '../../components/Header';
 
 /**
  * Search Container
@@ -27,12 +27,9 @@ class SearchPage extends Component {
 
     return (
       <>
-        <MainHeader>
-          <h1>Beer Store</h1>
-          <Search
-            term={term}
-          />
-        </MainHeader>
+        <Header
+          term={term}
+        />
         <SectionWrapper>
           <Products
             term={term}
@@ -52,7 +49,7 @@ class SearchPage extends Component {
 }
 
 SearchPage.propTypes = {
-  term: string.isRequired,
+  term: string,
 };
 
 SearchPage.defaultProps = {

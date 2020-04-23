@@ -12,7 +12,7 @@ import {
 
 import {
   addToCart,
-} from '../../containers/Cart/actions';
+} from '../Cart/actions';
 
 import Product from '../../components/Product';
 import Loading from '../../components/Loading';
@@ -42,12 +42,12 @@ class Products extends Component {
     }
   }
 
-  handleAddCart = e => {
+  handleAddCart = (e) => {
     const {
-      addToCart,
+      addToCart: addToCartProps,
     } = this.props;
 
-    addToCart(e);
+    addToCartProps(e);
   }
 
   render() {
@@ -76,7 +76,7 @@ class Products extends Component {
     if (items.length === 0) {
       return (
         <p>No results</p>
-      );      
+      );
     }
 
     return (
@@ -87,16 +87,16 @@ class Products extends Component {
             height: '30px',
             padding: '5px 15px',
           }}
-        >      
-          {term.length > 0 &&
-            `Found ${items.length} for "${term}"`
-          }
+        >
+          {term.length > 0
+            && `Found ${items.length} for "${term}"`}
         </h2>
         <ContentProducts
           id="content-products"
         >
-          {items.map(item => (
+          {items.map((item) => (
             <Product
+              key={item.id}
               item={item}
               handleAddCart={this.handleAddCart}
             />

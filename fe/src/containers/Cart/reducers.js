@@ -3,7 +3,7 @@ import C from './constants';
 const initialState = {
   items: [],
   total: 0,
-  formatTotal: 'R$0,00', 
+  formatTotal: 'R$0,00',
 };
 
 const cartReducer = (state, action) => {

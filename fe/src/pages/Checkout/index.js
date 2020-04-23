@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import {
-  MainHeader,
   SectionWrapper,
 } from '../../cssGlobals/globals';
 
-import Search from '../../containers/Search/';
-import Cart from '../../containers/Cart/';
+import Cart from '../../containers/Cart';
+
+import Header from '../../components/Header';
 
 /**
  * CheckoutPage Container
@@ -16,10 +16,7 @@ class CheckoutPage extends Component {
   render() {
     return (
       <>
-        <MainHeader>
-          <h1>Beer Store</h1>
-          <Search />
-        </MainHeader>
+        <Header />
         <SectionWrapper
           id="checkout"
         >

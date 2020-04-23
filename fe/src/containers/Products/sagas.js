@@ -20,13 +20,11 @@ import {
 */
 function* fetchProducts(data) {
   let append = false;
-  let term;
+  const term = data.params?.name;
 
   if (data.params) {
     append = data.params.append;
   }
-
-  term = data.params?.name;
 
   try {
     const response = yield call(requestCall, data.params);

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Component) ErrorPage should render an ErrorPage 1`] = `
+<section
+  className="sc-AxhCb jmvNtO"
+>
+  <h1>
+    Something is rotten in the state of Denmark
+  </h1>
+  <p>
+    Try contact the administrators of site
+  </p>
+</section>
+`;

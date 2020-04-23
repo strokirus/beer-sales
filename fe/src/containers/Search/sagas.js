@@ -8,9 +8,6 @@ import C from './constants';
 import P from '../Products/constants';
 
 import history from '../../helpers/history';
-import {
-  routePaths,
-} from '../../settings';
 
 /**
  * Trigged when Request is demmanded
@@ -26,7 +23,6 @@ function* setText() {
 
     history.replace(`/${text}`);
   } catch (error) {
-    console.error(error);
     yield put({
       type: P.FETCH_PRODUCTS_FAILURE,
       error,

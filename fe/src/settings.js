@@ -17,7 +17,7 @@ export const requestBuilder = (endpoint = 'any', params) => {
   let server = API_SERVER;
   switch (endpoint) {
     case 'products':
-    
+
       server = server.concat('/products/');
 
       Object.keys(params).forEach((key, i) => {

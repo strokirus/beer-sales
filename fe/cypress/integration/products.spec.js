@@ -59,6 +59,32 @@ describe("All products items", () => {
 
     cy.get(".total-cart").within(items => {
       expect(items[0]).to.contain("Total: €5,21");
-    });    
-  });  
+    });
+  });
+
+  it("Checkout", () => {
+    cy.visit("/");
+
+    cy.get(".buy-item").within(items => {
+      items[0].click();
+      items[0].click();
+    });
+
+    cy.get(".remove-qtd").within(items => {
+      items[0].click();
+    });
+
+    cy.get(".checkout-button").within(items => {
+      items[0].click();
+    });
+
+    cy.get(".item-cart-product").within(items => {
+      expect(items).to.have.length(1);
+      expect(items[0]).to.contain("Qtd: 1");
+    });
+
+    cy.get(".total-cart").within(items => {
+      expect(items[0]).to.contain("Total: €5,21");
+    });
+  });   
 });

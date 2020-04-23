@@ -2,7 +2,7 @@ import C from './constants';
 
 const initialState = {
   items: [],
-  text: '', 
+  text: '',
   status: {
     isLoading: false,
     isError: false,
@@ -15,7 +15,7 @@ const searchReducer = (state, action) => {
       return {
         ...state,
         text: action.params,
-      };      
+      };
 
     default:
       return state || initialState;

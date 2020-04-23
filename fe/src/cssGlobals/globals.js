@@ -81,6 +81,9 @@ export const GlobalStyle = createGlobalStyle`
 
     .item-cart-product {
       display: grid;
+      background-color: 
+        ${({ theme }) => (theme.mode === 'dark' ? `${colors.dark}` : `${colors.white}`)};
+
       padding-bottom: 0 !important;
       grid-template-columns: 33% 33% 33%;
       grid-template-rows: auto auto auto;
@@ -114,29 +117,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export const MainHeader = styled.header`
-  padding: 0 25px;
-  width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px 0px;
-  margin-bottom: 10px;
-  line-height: 60px;
-  height: 60px;
-  display: grid;
-  grid-template-columns: 20% 75%;
-  grid-template-rows: auto auto;
-  background-color:
-    ${({ theme }) => (theme.mode === 'dark' ? `${colors.dark}` : `${colors.white}`)};
-  
-  > h1 {
-    font-size: 20px;
-    font-weight: 500;
-  }
-
-  @media (max-width: ${breakpoints.small}) {
-    grid-template-columns: 40% 60%;
-  }
-`;
-
 export const ContentProducts = styled.article`
   width: 73%;
   display: grid;
@@ -152,33 +132,6 @@ export const ContentProducts = styled.article`
   }
 `;
 
-
-export const MainFooter = styled.footer`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 20px 0;
-  display: flex;
-  flex-start: end;
-  width: 100%;
-  justify-content: center;
-
-  > .about {
-    flex: 0 0 48%;
-    width: 48%;
-    text-align: center;
-
-    > a {
-      margin-left: 5px;
-    }
-  }
-
-  > .toggle {
-    flex: 0 0 48%;
-    width: 48%;
-    text-align: center;
-  }
-`;
 
 export const SectionWrapper = styled.section`
   position: relative;
@@ -219,11 +172,18 @@ export const CartProduct = styled.article`
   }  
 `;
 
+export const Wrapper = styled.section`
+  width: 75%;
+  padding: 50px 0;
+  > * {
+    width: 100%;
+  }
+`;
+
 export default {
   GlobalStyle,
-  MainHeader,
   SectionWrapper,
-  MainFooter,
   ContentProducts,
   CartProduct,
+  Wrapper,
 };

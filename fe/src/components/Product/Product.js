@@ -29,14 +29,15 @@ const Product = ({ item, handleAddCart }) => {
       alt={name}
       title={name}
     >
-      {labels && labels.medium &&
+      {labels && labels.medium
+        && (
         <BoxImage>
           <img
             src={labels.medium}
             alt={name}
           />
         </BoxImage>
-      }            
+        )}
       <Header>
         <h1>{name}</h1>
       </Header>
@@ -44,11 +45,11 @@ const Product = ({ item, handleAddCart }) => {
       <Button
         type="button"
         className="buy-item"
-        onClick={e => handleAddCart(item, e)}
+        onClick={(e) => handleAddCart(item, e)}
       >
         Buy
       </Button>
-    </SectionProduct>    
+    </SectionProduct>
   );
 };
 

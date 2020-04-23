@@ -20,20 +20,20 @@ class Search extends Component {
   componentDidMount = () => {
     const {
       term,
-      setText,
+      setText: setTextProps,
     } = this.props;
 
     if (term && term.length > 0) {
-      setText(term);
+      setTextProps(term);
     }
   }
 
   onChangeText = (e) => {
     const {
-      setText,
+      setText: setTextProps,
     } = this.props;
 
-    setText(e.target.value);
+    setTextProps(e.target.value);
   }
 
   onKeyChange = (e) => {
@@ -42,11 +42,11 @@ class Search extends Component {
     } = e;
 
     const {
-      setTextEnter,
+      setTextEnter: setTextEnterProps,
     } = this.props;
 
     if (keyCode === 13) {
-      setTextEnter();
+      setTextEnterProps();
     }
   }
 

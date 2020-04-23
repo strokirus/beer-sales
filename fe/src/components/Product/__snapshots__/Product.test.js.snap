@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Component) Product should render an Products 1`] = `
+<section
+  alt="California Black Beer"
+  className="sc-AxjAm bMxEDg item-product"
+  title="California Black Beer"
+>
+  <section
+    className="sc-AxirZ kWBsDv"
+  >
+    <img
+      alt="California Black Beer"
+      src="https://brewerydb-images.s3.amazonaws.com/beer/9OyQXs/upload_zYaABP-medium.png"
+    />
+  </section>
+  <header
+    className="sc-AxiKw ehIHUN"
+  >
+    <h1>
+      California Black Beer
+    </h1>
+  </header>
+  <p
+    className="sc-AxhUy TvgQO"
+  >
+    €22,71
+  </p>
+  <button
+    className="sc-AxhCb uDiuy buy-item"
+    onClick={[Function]}
+    type="button"
+  >
+    Buy
+  </button>
+</section>
+`;

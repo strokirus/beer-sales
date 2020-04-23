@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Component) ProductCart should render an ProductCart 1`] = `
+<section
+  alt="California Black Beer"
+  className="sc-AxgMl cWwlFt item-cart-product"
+  title="California Black Beer"
+>
+  <header
+    className="sc-AxiKw ehIHUN"
+  >
+    <h1>
+      California Black Beer
+    </h1>
+  </header>
+  <section
+    className="sc-AxheI fYjabA"
+  >
+    <p>
+      Qtd: 2
+    </p>
+    <p>
+      €22,71/un
+    </p>
+  </section>
+  <section
+    className="sc-Axmtr iPBpgQ"
+  >
+    <button
+      className="remove-qtd"
+      onClick={[Function]}
+      type="button"
+    >
+      -
+    </button>
+    <button
+      className="add-qtd"
+      onClick={[Function]}
+      type="button"
+    >
+      +
+    </button>
+    <p>
+      €22,71
+    </p>
+  </section>
+</section>
+`;

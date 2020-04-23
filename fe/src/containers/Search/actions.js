@@ -3,7 +3,7 @@ import C from './constants';
 /**
  * Request to Search Request and store
  */
-export const setText = params => ({
+export const setText = (params) => ({
   type: C.SET_TEXT,
   params,
 });
@@ -15,4 +15,4 @@ export const setTextEnter = () => ({
 export default {
   setText,
   setTextEnter,
-}
+};

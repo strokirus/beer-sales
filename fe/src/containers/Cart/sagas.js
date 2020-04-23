@@ -22,7 +22,7 @@ function* addCart(data) {
       items,
     } = yield select((state) => state.cart);
 
-    const filtered = items.findIndex(i => i.id === params.id);
+    const filtered = items.findIndex((i) => i.id === params.id);
 
     if (filtered < 0) {
       items.push({
@@ -63,11 +63,11 @@ function* removeCart(data) {
       params,
     } = data;
 
-    let {
+    const {
       items,
     } = yield select((state) => state.cart);
 
-    const indexItem = items.findIndex(i => i.id === params.id);
+    const indexItem = items.findIndex((i) => i.id === params.id);
 
     if (items[indexItem].qtd > 1) {
       items[indexItem].qtd -= 1;

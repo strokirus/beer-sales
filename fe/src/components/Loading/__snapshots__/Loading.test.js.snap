@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Component) Loading should render an Loading 1`] = `
+<section
+  className="sc-AxhCb jmvNtO"
+>
+  <h1>
+    Loading
+  </h1>
+</section>
+`;

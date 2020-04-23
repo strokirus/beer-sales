@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { object, func } from 'prop-types';
+import { object, func, element } from 'prop-types';
 import { connect } from 'react-redux';
 
 import {
@@ -12,30 +12,31 @@ import {
 } from '../../cssGlobals/globals';
 
 import ProductCart from '../../components/ProductCart';
-  
+
 /**
  * Cart Container
 */
 class Cart extends Component {
-  handleRemoveCart = e => {
+  handleRemoveCart = (e) => {
     const {
-      removeToCart,
+      removeToCart: removeToCartProps,
     } = this.props;
 
-    removeToCart(e);
+    removeToCartProps(e);
   }
 
-  handleAddCart = e => {
+  handleAddCart = (e) => {
     const {
-      addToCart,
+      addToCart: addToCartProps,
     } = this.props;
 
-    addToCart(e);
+    addToCartProps(e);
   }
-    
+
   render() {
     const {
       cart,
+      children,
     } = this.props;
 
     const {
@@ -52,10 +53,13 @@ class Cart extends Component {
             style={{
               padding: '4px 8px',
             }}
-          >Cart</h1>
+          >
+            Cart
+          </h1>
           <article>
-            {items.map(item => (
+            {items.map((item) => (
               <ProductCart
+                key={item.id}
                 item={item}
                 addCart={this.handleAddCart}
                 removeCart={this.handleRemoveCart}
@@ -67,9 +71,7 @@ class Cart extends Component {
           >
             {`Total: ${formatTotal}`}
           </p>
-          {items.length > 0 &&
-            this.props.children
-          }
+          {items.length > 0 && children}
         </CartProduct>
       </>
     );
@@ -80,10 +82,12 @@ Cart.propTypes = {
   cart: object,
   addToCart: func.isRequired,
   removeToCart: func.isRequired,
+  children: element,
 };
 
 Cart.defaultProps = {
   cart: { },
+  children: <></>,
 };
 
 function mapStateToProps(state, ownProps) {

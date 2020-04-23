@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Component) Footer should render an Footer 1`] = `
+<footer
+  className="sc-AxjAm hAmNEn"
+>
+  <p
+    className="about"
+  >
+    Created by
+    <a
+      href="//diasalexandre.com"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Alexandre Dias
+    </a>
+  </p>
+  <p
+    className="toggle"
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Toggle theme
+    </button>
+  </p>
+</footer>
+`;

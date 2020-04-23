@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1587605829221" clover="3.2.0">
+  <project timestamp="1587605829221" name="All files">
+    <metrics statements="50" coveredstatements="50" conditionals="9" coveredconditionals="6" methods="21" coveredmethods="15" elements="80" coveredelements="71" complexity="0" loc="50" ncloc="50" packages="7" files="12" classes="12"/>
+    <package name="ErrorPage">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="ErrorPage.js" path="/Users/diasalexandre/codes/jobs/beer-sales/fe/src/components/ErrorPage/ErrorPage.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="Footer">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="Footer.js" path="/Users/diasalexandre/codes/jobs/beer-sales/fe/src/components/Footer/Footer.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+      </file>
+      <file name="styles.js" path="/Users/diasalexandre/codes/jobs/beer-sales/fe/src/components/Footer/styles.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="Header">
+      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="Header.js" path="/Users/diasalexandre/codes/jobs/beer-sales/fe/src/components/Header/Header.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+      </file>
+      <file name="styles.js" path="/Users/diasalexandre/codes/jobs/beer-sales/fe/src/components/Header/styles.js">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="20" count="1" type="cond" truecount="1" falsecount="1"/>
+      </file>
+    </package>
+    <package name="InputSearch">
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
+      <file name="InputSearch.js" path="/Users/diasalexandre/codes/jobs/beer-sales/fe/src/components/InputSearch/InputSearch.js">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+      </file>
+      <file name="styles.js" path="/Users/diasalexandre/codes/jobs/beer-sales/fe/src/components/InputSearch/styles.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="Loading">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Loading.js" path="/Users/diasalexandre/codes/jobs/beer-sales/fe/src/components/Loading/Loading.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="Product">
+      <metrics statements="13" coveredstatements="13" conditionals="7" coveredconditionals="5" methods="5" coveredmethods="4"/>
+      <file name="Product.js" path="/Users/diasalexandre/codes/jobs/beer-sales/fe/src/components/Product/Product.js">
+        <metrics statements="6" coveredstatements="6" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="2"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+      </file>
+      <file name="styles.js" path="/Users/diasalexandre/codes/jobs/beer-sales/fe/src/components/Product/styles.js">
+        <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="13" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="56" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="63" count="2" type="stmt"/>
+        <line num="73" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="ProductCart">
+      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
+      <file name="ProductCart.js" path="/Users/diasalexandre/codes/jobs/beer-sales/fe/src/components/ProductCart/ProductCart.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+      </file>
+      <file name="styles.js" path="/Users/diasalexandre/codes/jobs/beer-sales/fe/src/components/ProductCart/styles.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
