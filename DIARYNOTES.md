@@ -14,7 +14,7 @@ Create how to manage project with deadline and planning next work days. Config a
 - Create service
 - Fetch all
 
-Download database of product and classify with stock value and prices. Clean database.
+Download database of productbased in BreweryDB (http://brewerydb.com/) and classify with stock value and prices. Clean database.
 Create server with filter options and access to database.
 Create fetchAll in Front-end app, more skeleton to understand what data we have.
 
